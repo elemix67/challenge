@@ -3,6 +3,7 @@
     --color-secondary: #FFF9EB;
     --color-tertiary: #4ba19d;
     --color-button: #fe652b;
+    --color-button2: #f1c037;
     --color-button-hover: #e55720;
     --color-text: #1c349e;
     --color-white: #FFFFFF;
@@ -150,6 +151,16 @@ ul {
     padding: 10px 40px;
     color: var(--color-white);
     background-color: var(--color-button);
+    font-size: 16px;
+}
+
+.button-draw2 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 30px;
+    color: var(--color-white);
+    background-color: var(--color-button2);
     font-size: 16px;
 }
 

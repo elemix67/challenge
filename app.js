@@ -1,4 +1,3 @@
-//O principal objetivo deste desafio é fortalecer suas habilidades em lógica de programação. Aqui você deverá desenvolver a lógica para resolver o problema.
 
 let listaDeNomes = [];
 limparCampo();
@@ -8,6 +7,7 @@ function exibirTextoNaTela (tag, texto) {
     campo.innerHTML = texto;
 }
 
+//Adicionar amigo
 function adicionarAmigo() {
     //Pegar o conteúdo do campo 'input', colocar em maiúscula para adicionar na lista de nomes
     let nome = document.querySelector('input').value.toUpperCase();
@@ -18,6 +18,7 @@ function adicionarAmigo() {
     } else {
         //Adicionar o nome na lista de nomes
         listaDeNomes.push(nome);
+        //Remover último valor caso seja vazio
         if (listaDeNomes[listaDeNomes.length -1] == '') {
             listaDeNomes.pop();
         }
@@ -49,11 +50,26 @@ function limparCampo () {
     nome = document.querySelector('input');
     nome.value = '';
 }
+
 //Sortear amigo
 function sortearAmigo() {
-    let sorteio = Math.floor(Math.random() * listaDeNomes.length);
-    //Deletar um índice a partir do índice calculado anteriormente e retorna o valor deste índice
-    let amigoSorteado = listaDeNomes.splice(sorteio, 1)[0];
-    let nomeSorteado = document.getElementById('resultado');
-    nomeSorteado.innerHTML = amigoSorteado;
+    // Informar que todos os nomes já sorteados ao final da lista
+    if (listaDeNomes.length == 0) {
+        let listaDeNomesVazia = document.getElementById('resultado');
+        listaDeNomesVazia.innerHTML = 'Todos já foram sorteados!';
+        //
+    } else {
+        //Calcular um número randômico para usar como índice 
+        let sorteio = Math.floor(Math.random() * listaDeNomes.length);
+        //Deletar um índice a partir do índice calculado anteriormente e retorna o valor deste índice
+        let amigoSorteado = listaDeNomes.splice(sorteio, 1)[0];
+        let nomeSorteado = document.getElementById('resultado');
+        nomeSorteado.innerHTML = amigoSorteado;
+    }
+}
+
+// Limpar o resultado para a próxima escolha
+function limparResultado() {
+    //let listaDeNomesVazia = document.getElementById('limparResultado');
+    document.getElementById('resultado').textContent = '';
 }
