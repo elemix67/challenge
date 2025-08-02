@@ -68,8 +68,8 @@ function sortearAmigo() {
         nomeSorteado.innerHTML = amigoSorteado;
     }
 }
+
 // Limpar o resultado para a próxima escolha
 function limparResultado() {
-    //let listaDeNomesVazia = document.getElementById('limparResultado');
     document.getElementById('resultado').textContent = '';
 }
