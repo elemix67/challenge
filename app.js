@@ -57,7 +57,8 @@ function sortearAmigo() {
     if (listaDeNomes.length == 0) {
         let listaDeNomesVazia = document.getElementById('resultado');
         listaDeNomesVazia.innerHTML = 'Todos já foram sorteados!';
-        //
+        document.getElementById('listaAmigos').textContent = '';
+        listaDeNomes = [];
     } else {
         //Calcular um número randômico para usar como índice 
         let sorteio = Math.floor(Math.random() * listaDeNomes.length);
@@ -66,10 +67,4 @@ function sortearAmigo() {
         let nomeSorteado = document.getElementById('resultado');
         nomeSorteado.innerHTML = amigoSorteado;
     }
-}
-
-// Limpar o resultado para a próxima escolha
-function limparResultado() {
-    //let listaDeNomesVazia = document.getElementById('limparResultado');
-    document.getElementById('resultado').textContent = '';
 }
