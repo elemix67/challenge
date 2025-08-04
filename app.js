@@ -74,7 +74,7 @@ function sortearAmigo() {
         //Deletar um índice a partir do índice calculado anteriormente e retorna o valor deste índice
         let amigoSorteado = listaDeNomes.splice(sorteio, 1)[0];
         let nomeSorteado = document.getElementById('resultado');
-        nomeSorteado.innerHTML = amigoSorteado;
+        nomeSorteado.innerHTML = `Seu amigo secreto: ${amigoSorteado}`;
     }
 }
 
