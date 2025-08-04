@@ -18,14 +18,13 @@ function adicionarAmigo() {
         limparCampo();
     } else {
         //Adicionar o nome na lista de nomes
+        document.getElementById('resultado').textContent = '';
         listaDeNomes.push(nome);
         contadorDeNomes++;
-        console.log(contadorDeNomes);
         //Remover último valor caso seja vazio
         if (listaDeNomes[listaDeNomes.length -1] == '') {
             listaDeNomes.pop();
             contadorDeNomes--;
-            console.log(contadorDeNomes);
         }
         //Chamar a função para adicionar e exibir a lista de nomes na tela
         exibirLista();
