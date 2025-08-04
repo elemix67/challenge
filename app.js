@@ -67,6 +67,7 @@ function sortearAmigo() {
         listaDeNomes = [];
         contadorDeNomes = 0;
     } else if (contadorDeNomes < 3) {
+        //Número mínimo de participantes (3)
         document.getElementById('resultado').textContent = 'São necessários pelo menos 3 pessoas para um amigo secreto!';
     } else {
         //Calcular um número randômico para usar como índice 
