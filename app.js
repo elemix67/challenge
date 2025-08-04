@@ -1,5 +1,6 @@
 
 let listaDeNomes = [];
+let contadorDeNomes = 0;
 limparCampo();
 
 function exibirTextoNaTela (tag, texto) {
@@ -18,9 +19,13 @@ function adicionarAmigo() {
     } else {
         //Adicionar o nome na lista de nomes
         listaDeNomes.push(nome);
+        contadorDeNomes++;
+        console.log(contadorDeNomes);
         //Remover último valor caso seja vazio
         if (listaDeNomes[listaDeNomes.length -1] == '') {
             listaDeNomes.pop();
+            contadorDeNomes--;
+            console.log(contadorDeNomes);
         }
         //Chamar a função para adicionar e exibir a lista de nomes na tela
         exibirLista();
@@ -34,6 +39,7 @@ function exibirLista() {
     if (nome.value == '' ) {
         exibirTextoNaTela('h2', 'Nome em branco. Favor digitar um nome.');
     } else {
+        exibirTextoNaTela('h2', 'Digite o nome dos seus amigos');
         //Pegar o ID do campo de lista para incrementá-la
         let listaDeAmigos = document.getElementById('listaAmigos');
         //Criar ítem da lista
@@ -59,6 +65,9 @@ function sortearAmigo() {
         listaDeNomesVazia.innerHTML = 'Todos já foram sorteados!';
         document.getElementById('listaAmigos').textContent = '';
         listaDeNomes = [];
+        contadorDeNomes = 0;
+    } else if (contadorDeNomes < 3) {
+        document.getElementById('resultado').textContent = 'São necessários pelo menos 3 pessoas para um amigo secreto!';
     } else {
         //Calcular um número randômico para usar como índice 
         let sorteio = Math.floor(Math.random() * listaDeNomes.length);
