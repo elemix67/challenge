@@ -82,3 +82,10 @@ function sortearAmigo() {
 function limparResultado() {
     document.getElementById('resultado').textContent = '';
 }
+
+function handleEnter(event) {
+  if (event.key === 'Enter') {
+    // Chame sua função aqui
+    adicionarAmigo();
+  }
+}
