@@ -61,7 +61,8 @@ function sortearAmigo() {
     // Informar que todos os nomes já sorteados ao final da lista
     if (listaDeNomes.length == 0) {
         let listaDeNomesVazia = document.getElementById('resultado');
-        listaDeNomesVazia.innerHTML = 'Todos já foram sorteados!';
+        listaDeNomesVazia.innerHTML = 'Todos já foram sorteados';
+        listaDeNomesVazia.style.color = "red";
         document.getElementById('listaAmigos').textContent = '';
         listaDeNomes = [];
         contadorDeNomes = 0;
@@ -75,6 +76,7 @@ function sortearAmigo() {
         let amigoSorteado = listaDeNomes.splice(sorteio, 1)[0];
         let nomeSorteado = document.getElementById('resultado');
         nomeSorteado.innerHTML = `Seu amigo secreto: ${amigoSorteado}`;
+        nomeSorteado.style.color = "#05DF05";
     }
 }
 
