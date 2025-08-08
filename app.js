@@ -11,7 +11,7 @@ function exibirTextoNaTela (tag, texto) {
 //Adicionar amigo
 function adicionarAmigo() {
     //Pegar o conteúdo do campo 'input', colocar em maiúscula para adicionar na lista de nomes
-    let nome = document.querySelector('input').value.toUpperCase();
+    let nome = document.querySelector('input').value.toUpperCase().trim();
     //Verificar se o nome adicionado já existe na lista de nomes e exibir mensagem na tela caso esteja
     if (listaDeNomes.includes(nome)) {
         exibirTextoNaTela('h2', 'Nome já existe. Favor digitar outro nome.');
