@@ -44,6 +44,8 @@ body {
 
 /* Seção de entrada */
 .input-section {
+    position: sticky;
+    align-self: center;
     flex: 60%;
     background-color: var(--color-secondary);
     border: 1px solid #000;
@@ -52,7 +54,7 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    width: 100%;
+    width: 60%;
 }
 
 /* Títulos */
@@ -131,7 +133,7 @@ button {
     border-radius: 0 25px 25px 0;
     font-size: 18px;
     position: relative;
-    animation: mover-e-mudar-cor 4s
+    animation: mudar-cor 4s
     infinite;
 }
 
@@ -197,7 +199,7 @@ ul {
     background-color: var(--color-button2-hover);
 }
 
-@keyframes mover-e-mudar-cor {
+@keyframes mudar-cor {
   0% {
     /*left: 0px;*/
     background: blue;
