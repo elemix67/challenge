@@ -6,7 +6,8 @@
     --color-button2: #f1c037;
     --color-button-hover: #e55720;
     --color-button2-hover: #cfa52f;
-    --color-text: #1c349e;
+    --color-text: #ffffff;
+    --color-text-lista: #000000;
     --color-white: #FFFFFF;
 }
 
@@ -90,14 +91,16 @@ body {
 }
 
 .button-container {
+    /*implementado display: flex para colocar os botões lado a lado*/
+    display: flex;
     width: 300px;
     justify-content: center;
 }
-
-.button-container2 {
+/*classe comentada abaixo pois adicionamos o display flex no container para ficar lado a lado*/
+/*.button-container2 {
     width: 300px;
     justify-content: center;
-}
+}*/
 
 /* Estilos de entrada de texto */
 .input-title {
@@ -123,10 +126,13 @@ button {
 }
 
 .button-add {
-    background-color: var(--color-tertiary);
+    /*background-color: var(--color-tertiary);*/
     color: var(--color-text);
     border-radius: 0 25px 25px 0;
     font-size: 18px;
+    position: relative;
+    animation: mover-e-mudar-cor 4s
+    infinite;
 }
 
 .button-add:hover {
@@ -136,7 +142,7 @@ button {
 /* Listas */
 ul {
     list-style-type: none;
-    color: var(--color-text);
+    color: var(--color-text-lista);
     font-family: "Inter", sans-serif;
     font-size: 18px;
     margin: 20px 0;
@@ -152,6 +158,8 @@ ul {
 
 /* Botão de sortear título */
 .button-draw {
+    position: relative;
+    right: 10px;
     display: flex;
     align-items: center;
     width: 100%;
@@ -162,6 +170,8 @@ ul {
 }
 
 .button-draw2 {
+    position: relative;
+    left: 10px;
     display: flex;
     align-items: center;
     width: 100%;
@@ -186,3 +196,21 @@ ul {
 .button-draw2:hover {
     background-color: var(--color-button2-hover);
 }
+
+@keyframes mover-e-mudar-cor {
+  0% {
+    /*left: 0px;*/
+    background: blue;
+  }
+
+  50% {
+    /*left: 50px;*/
+    background: red;
+  }
+
+  100% {
+    /*left: 0px;*/
+    background: blue;
+  }
+}
+
